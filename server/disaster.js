@@ -20,7 +20,7 @@ exports.disasterEvent = function (connection) {
                 console.log(error);
                 response.status(500).send("Server error");
             } else {
-                response.status(200).send({"status":"Disaster data inserted successfully"});
+                response.status(200).send(rows);
             }
         });
     }
@@ -36,23 +36,23 @@ exports.disasterTypes = function (connection) {
             } else {
                 response.status(200).send(rows);
             }
-        })
+        });
     }
 }
 
 function prepareDisasterFetchQuery (queryParameters, connection) {
     var queryString = 'SELECT * FROM DisasterType t, Disaster d WHERE d.type = t.id';
     if (queryParameters.name) {
-        queryString += ' AND t.name = ' + connection.escapeId(queryParameters.name);
+        queryString += ' AND t.name = ' + connection.escape(queryParameters.name);
     }
     if (queryParameters.damage) {
-        queryString += ' AND d.propertyLost >= ' + connection.escapeId(queryParameters.damage);
+        queryString += ' AND d.propertyLost >= ' + connection.escape(queryParameters.damage);
     }
     if (queryParameters.casualty) {
-        queryString += ' AND d.casualty >= ' + connection.escapeId(queryParameters.casualty);
+        queryString += ' AND d.casualty >= ' + connection.escape(queryParameters.casualty);
     }
     if (queryParameters.location) {
-        queryString += ' AND d.id IN (SELECT e.experienced FROM Experienced e, Region r WHERE e.occuredAt = r.id AND r.name = ' + connection.escapeId(queryParameters.location);
+        queryString += ' AND d.id IN (SELECT e.experienced FROM Experienced e, Region r WHERE e.occuredAt = r.id AND r.name = ' + connection.escape(queryParameters.location);
     }
 
     return queryString;
@@ -65,11 +65,11 @@ function prepareDisasterInsert (queryParameters, connection) {
         propertyLost = queryParameters.propertyLost || '',
         type = queryParameters.type || '',
         queryString = 'INSERT INTO Disaster (start, end, casualty, propertyLost, type) VALUES ('
-            + 'STR_TO_DATE("' + startDate + '", "%m-%d-%Y %H:%i:%s"),'
-            + 'STR_TO_DATE("' + endDate + '", "%m-%d-%Y %H:%i:%s"),'
-            + '"' + casualty + '",'
-            + '"' + propertyLost + '",'
-            + type
+            + 'STR_TO_DATE(' + connection.escape(startDate) + ', "%m-%d-%Y %H:%i:%s"),'
+            + 'STR_TO_DATE(' + connection.escape(endDate) + ', "%m-%d-%Y %H:%i:%s"),'
+            + connection.escape(casualty) + ','
+            + connection.escape(propertyLost) + ','
+            + connection.escape(type)
             + ')';
         return queryString;
 }

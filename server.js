@@ -43,7 +43,10 @@ app.use("/scripts", express.static(__dirname + "/bower_components"));
 app.use("/", express.static(__dirname + "/client"));
 
 app.get("/test", test.getMe);
+
 app.get("/region", region.regionList(connection));
+app.post("/region", region.addRegion(connection));
+
 app.get("/disasterTypes", disaster.disasterTypes(connection));
 app.get("/disaster", disaster.disasterInformation(connection));
 app.post("/disaster", disaster.disasterEvent(connection));

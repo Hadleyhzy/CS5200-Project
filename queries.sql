@@ -1,4 +1,5 @@
 Use Cases
+DONE
 I:Creating and Updating the earth location database
 Actors: Geographical Information System
 Step by Step Description:
@@ -42,6 +43,7 @@ INSERT INTO Climate (windSpeed, humidity, precipitation, isFor, type)
 VALUES ()
 
 
+DONE
 III: Updating the record of the natural disasters
 Actors: Natural Disaster Management Department
 Step by Step description:
@@ -59,6 +61,7 @@ INSERT INTO Disaster (start, end, casualty, propertyLost, type)
 VALUES ()
 
 
+DONE
 IV: Retrieving information about natural disasters
 Actors: Natural Disaster Management Department
 Step by step:
