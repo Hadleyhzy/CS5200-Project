@@ -1,5 +1,7 @@
 INSERT INTO Plate (name, area) VALUES
-("test", 5000),
-("newplate", 2000);
+("African Plate", 61300000),
+("Nazca Plate", 15600000);
+("Pacific Plate",103300000);
+("Antarctic Plate"
 
 INSERT INTO Continent ()
