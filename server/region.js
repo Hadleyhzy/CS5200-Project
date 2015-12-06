@@ -1,6 +1,6 @@
 exports.regionList = function (connection) {
     return function (request, response) {
-        var queryString = 'SELECT * FROM Region';
+        var queryString = 'SELECT * FROM Region r, RegionType rt WHERE rt.id=r.type';
         connection.query(queryString, function (error, rows, fields) {
             if (error) {
                 console.log(error);

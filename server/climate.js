@@ -61,7 +61,7 @@ function prepareClimateAndDateObject (parameters) {
 }
 
 function prepareClimateForRegionAndDates () {
-    return 'SELECT * FROM Climate WHERE date>=? AND date<=? AND isFor=?';
+    return 'SELECT * FROM Climate c, ClimateType ct, Temperature t WHERE ct.id=c.type AND c.id=t.climate AND c.date>=? AND c.date<=? AND c.isFor=?';
 }
 
 function prepareClimateInsert () {
