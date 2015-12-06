@@ -14,8 +14,9 @@ exports.disasterInformation = function (connection) {
 
 exports.disasterEvent = function (connection) {
     return function (request, response) {
-        var queryString = prepareDisasterInsert(request.body, connection);
-        connection.query(queryString, function (error, rows, fields) {
+        var insertObject = prepareDisasterInsertObject(request.body),
+        queryString = prepareDisasterInsert();
+        connection.query(queryString, insertObject, function (error, rows, fields) {
             if (error) {
                 console.log(error);
                 response.status(500).send("Server error");
@@ -58,18 +59,22 @@ function prepareDisasterFetchQuery (queryParameters, connection) {
     return queryString;
 }
 
-function prepareDisasterInsert (queryParameters, connection) {
-    var startDate = queryParameters.start || '',
-        endDate = queryParameters.end || '',
-        casualty = queryParameters.casualty || '',
-        propertyLost = queryParameters.propertyLost || '',
-        type = queryParameters.type || '',
-        queryString = 'INSERT INTO Disaster (start, end, casualty, propertyLost, type) VALUES ('
-            + 'STR_TO_DATE(' + connection.escape(startDate) + ', "%m-%d-%Y %H:%i:%s"),'
-            + 'STR_TO_DATE(' + connection.escape(endDate) + ', "%m-%d-%Y %H:%i:%s"),'
-            + connection.escape(casualty) + ','
-            + connection.escape(propertyLost) + ','
-            + connection.escape(type)
-            + ')';
-        return queryString;
+function prepareDisasterInsert () {
+    return 'INSERT INTO Disaster SET ?';
+}
+
+function prepareDisasterInsertObject (parameters) {
+    var startDate, endDate,
+    casualty = parameters.casualty || '',
+    propertyLost = parameters.propertyLost || '',
+    type = parameters.type || '';
+    startDate = (parameters.start ? new Date(parameters.start) : '');
+    endDate = (parameters.start ? new Date(parameters.end) : '');
+    return {
+        "start":startDate,
+        "end":endDate,
+        "casualty":casualty,
+        "propertyLost":propertyLost,
+        "type":type
+    };
 }

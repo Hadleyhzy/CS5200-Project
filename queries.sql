@@ -26,6 +26,7 @@ SET
 WHERE
 
 
+DONE
 II: Updating regional weather information daily
 Actors: Weather Stations and Regional/Global Satellite
 Step by step description:
@@ -74,6 +75,7 @@ to the Natural Disaster Management Department if the disaster information exists
 appropriate error message
 
 
+DONE
 V: Retrieving information to analyze the climate change
 Actors: Environmental Scientists
 Step by step description:

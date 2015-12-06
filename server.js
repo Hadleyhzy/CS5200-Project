@@ -10,7 +10,8 @@ var express = require('express'),
 
 var test = require('./server/test'),
     region = require('./server/region'),
-    disaster = require('./server/disaster');
+    disaster = require('./server/disaster'),
+    climate = require('./server/climate');
 
 process.stdin.resume();//so the program will not close instantly
 
@@ -50,6 +51,10 @@ app.post("/region", region.addRegion(connection));
 app.get("/disasterTypes", disaster.disasterTypes(connection));
 app.get("/disaster", disaster.disasterInformation(connection));
 app.post("/disaster", disaster.disasterEvent(connection));
+
+app.get("/climateTypes", climate.climateTypes(connection));
+app.get("/climate", climate.climateForRegion(connection));
+app.post("/climate", climate.addData(connection));
 
 /*
  * return this page when no valid path is found.
