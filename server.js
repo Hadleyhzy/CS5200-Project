@@ -11,7 +11,10 @@ var express = require('express'),
 var test = require('./server/test'),
     region = require('./server/region'),
     disaster = require('./server/disaster'),
-    climate = require('./server/climate');
+    climate = require('./server/climate'),
+    landscape = require('./server/landscape'),
+    resources = require('./server/resources'),
+    diversity = require('./server/diversity');
 
 process.stdin.resume();//so the program will not close instantly
 
@@ -55,6 +58,12 @@ app.post("/disaster", disaster.disasterEvent(connection));
 app.get("/climateTypes", climate.climateTypes(connection));
 app.get("/climate", climate.climateForRegion(connection));
 app.post("/climate", climate.addData(connection));
+
+app.get("/landscape", landscape.getLandscapeData(connection));
+
+app.get("/resources", resources.getResources(connection));
+
+app.get("/diversity", diversity.getSpecies(connection));
 
 /*
  * return this page when no valid path is found.

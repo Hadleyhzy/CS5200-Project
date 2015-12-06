@@ -85,6 +85,7 @@ region.
 SELECT * FROM Climate WHERE start=? AND end=?
 
 
+DONE
 VI: Retrieving the information of the land and resources
 Actors: Department of Land and Resources
 Step by step description:
@@ -105,6 +106,7 @@ WHERE res.partOf=r.id AND r.id=? AND res.type IN (
 )
 
 
+DONE
 VII: Retrieving general geography information
 Actor: general users(no authority access, can be students/travelers)
 Step by Step description:

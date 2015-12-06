@@ -2,14 +2,21 @@ exports.addData = function (connection) {
     return function (request, response) {
         var insertObject = prepareClimateInsertData(request.body),
         queryString = prepareClimateInsert();
-        console.log(queryString);
-        console.log(insertObject);
         connection.query(queryString, insertObject, function (error, rows, fields) {
             if (error) {
                 console.log(error);
                 response.status(500).send("Server error");
             } else {
-                response.status(200).send(rows);
+                queryString = prepareTemperatureInsert();
+                insertObject = prepareTemperatureInsertData(request.body, rows.insertId);
+                connection.query(queryString, insertObject, function (error, rows, fields) {
+                    if (error) {
+                        console.log(error);
+                        response.status(500).send("Server error");
+                    } else {
+                        response.status(200).send(rows);
+                    }
+                });
             }
         });
     }
@@ -68,6 +75,21 @@ function prepareClimateInsertData (parameters) {
         "precipitation":parameters.precipitation || '',
         "isFor":parameters.isFor || '',
         "type":parameters.type || ''
+    };
+}
+
+function prepareTemperatureInsert () {
+    return 'INSERT INTO Temperature SET ?';
+}
+
+function prepareTemperatureInsertData (parameters, climateId) {
+    return {
+        "min":parameters.min || '',
+        "max":parameters.max || '',
+        "surfaceTemp":parameters.surfaceTemp || '',
+        "airTemp":parameters.airTemp || '',
+        "averageTemp":parameters.averageTemp || '',
+        "climate":climateId
     };
 }
 
