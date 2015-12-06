@@ -57,7 +57,15 @@ INSERT INTO SurfaceElevation(min,max,ave) VALUES
 INSERT INTO Diversity(species) VALUES
 
 INSERT INTO ResourceType(name, description) VALUES
-("")
+("Forests","A forest is a large area of land covered with trees or other woody vegetation.[1] Hundreds of more precise definitions of forest are used throughout the world, incorporating factors such as tree density, tree height, land use, legal standing and ecological function.");
+("Fresh water","Fresh water is naturally occurring water on Earth's surface in ice sheets, ice caps, glaciers, icebergs, bogs, ponds, lakes, rivers and streams, and underground as groundwater in aquifers and underground streams. ");
+("Minerals:gold","Gold is a chemical element with symbol Au (from Latin: aurum) and atomic number 79. In its purest form, it is a bright, slightly reddish yellow, dense, soft, malleable and ductile metal. Chemically, gold is a transition metal and a group 11 element.");
+("Minerals:iron","Iron is a chemical element with symbol Fe (from Latin: ferrum) and atomic number 26. It is a metal in the first transition series.[4] It is by mass the most common element on Earth, forming much of Earth's outer and inner core. It is the fourth most common element in the Earth's crust.");
+("Minerals:copper","Copper is a chemical element with symbol Cu (from Latin: cuprum) and atomic number 29. It is a soft, malleable and ductile metal with very high thermal and electrical conductivity. A freshly exposed surface of pure copper has a reddish-orange color. It is used as a conductor of heat and electricity, as a building material, and as a constituent of various metal alloys.");
+("Minerals:Silver","Silver is a chemical element with symbol Ag (Greek: άργυρος árguros, Latin: argentum, both from the Indo-European root *h₂erǵ- for "grey" or "shining") and atomic number 47. A soft, white, lustrous transition metal, it possesses the highest electrical conductivity, thermal conductivity and reflectivity of any metal.");
+("fossile fuels:natural gas","Natural gas is a naturally occurring hydrocarbon gas mixture consisting primarily of methane, but commonly including varying amounts of other higher alkanes, and sometimes a small percentage of carbon dioxide, nitrogen, and/or hydrogen sulfide.");
+("fossile fuels:Petroleum","Petroleum (L. petroleum, from early 15c. "petroleum, rock oil" (mid-14c. in Anglo-French), from Medieval Latin petroleum, from Latin: petra: "rock" + oleum: "oil".[1][2][3]) is a naturally occurring, yellow-to-black liquid found in geological formations beneath the Earth's surface, which is commonly refined into various types of fuels.");
+
 
 INSERT INTO Resource(capacity) VALUES
 
