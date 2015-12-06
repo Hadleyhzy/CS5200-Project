@@ -48,6 +48,7 @@ app.use("/", express.static(__dirname + "/client"));
 
 app.get("/test", test.getMe);
 
+app.get("/regionTypes", region.regionTypes(connection));
 app.get("/region", region.regionList(connection));
 app.post("/region", region.addRegion(connection));
 

@@ -40,6 +40,24 @@ exports.updateRegion = function (connection) {
     }
 }
 
+exports.regionTypes = function (connection) {
+    return function (request, response) {
+        var queryString = prepareRegionTypesQuery();
+        connection.query(queryString, function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+                response.status(500).send("Server error");
+            } else {
+                response.status(200).send(rows);
+            }
+        });
+    }
+}
+
+function prepareRegionTypesQuery () {
+    return 'SELECT * FROM RegionType';
+}
+
 function prepareRegionInsert (parameters, connection) {
     var name = parameters.name || '',
         area = parameters.area || '',

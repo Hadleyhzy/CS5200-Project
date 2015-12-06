@@ -23,17 +23,17 @@ INSERT INTO Continent (name,area) VALUES
 
 
 INSERT INTO RegionType (name,description) VALUES
-("river","A river is a natural flowing watercourse, usually freshwater, flowing towards an ocean, sea, lake or another river. In some cases a river flows into the ground and becomes dry at the end of its course without reaching another body of water. Small rivers can be referred to using names such as stream, creek, brook, rivulet, and rill. ");
-("range","Range, a geographic term referring to a chain of hills or mountains; a somewhat linear, complex mountainous or hilly area.");
-("Massif","a massif is a section of a planet's crust that is demarcated by faults or flexures. In the movement of the crust, a massif tends to retain its internal structure while being displaced as a whole. The term is also used to refer to a group of mountains formed by such a structure.");
-("Peninsula","A peninsula (Latin: paeninsula from paene "almost" and insula "island") is a piece of land that is bordered by water on three sides but connected to mainland.");
-("Desert","A desert is a barren area of land where little precipitation occurs and consequently living conditions are hostile for plant and animal life. ");
-("lake","A lake is an area of variable size filled with water, localized in a basin, that is surrounded by land, apart from any river or other outlet that serves to feed or drain the lake.");
-("island","An island /ˈaɪlənd/ or isle /ˈaɪl/ is any piece of sub-continental land that is surrounded by water. Very small islands such as emergent land features on atolls can be called islets, skerries, cays or keys. An island in a river or a lake island may be called an eyot or ait, or a holm. ");
-("Bay","A bay is a body of water connected to an ocean or lake, formed by an indentation of the shoreline.[1] A large bay may be called a gulf, a sea, a sound, or a bight. A cove is a smaller circular or oval coastal inlet with a narrow entrance; some coves may be referred to as bays. ");
-("Ridge","A ridge or mountain ridge is a geological feature consisting of a chain of mountains or hills that form a continuous elevated crest for some distance. Ridges are usually termed hills or mountains as well, depending on size. ");
-("Forest","");
-("Rain forest","");
+("river","A river is a natural flowing watercourse, usually freshwater, flowing towards an ocean, sea, lake or another river. In some cases a river flows into the ground and becomes dry at the end of its course without reaching another body of water. Small rivers can be referred to using names such as stream, creek, brook, rivulet, and rill. "),
+("range","Range, a geographic term referring to a chain of hills or mountains, a somewhat linear, complex mountainous or hilly area."),
+("Massif","a massif is a section of a planet's crust that is demarcated by faults or flexures. In the movement of the crust, a massif tends to retain its internal structure while being displaced as a whole. The term is also used to refer to a group of mountains formed by such a structure."),
+("Peninsula",'A peninsula (Latin: paeninsula from paene "almost" and insula "island") is a piece of land that is bordered by water on three sides but connected to mainland.'),
+("Desert","A desert is a barren area of land where little precipitation occurs and consequently living conditions are hostile for plant and animal life. "),
+("lake","A lake is an area of variable size filled with water, localized in a basin, that is surrounded by land, apart from any river or other outlet that serves to feed or drain the lake."),
+("island","An island /ˈaɪlənd/ or isle /ˈaɪl/ is any piece of sub-continental land that is surrounded by water. Very small islands such as emergent land features on atolls can be called islets, skerries, cays or keys. An island in a river or a lake island may be called an eyot or ait, or a holm. "),
+("Bay","A bay is a body of water connected to an ocean or lake, formed by an indentation of the shoreline.[1] A large bay may be called a gulf, a sea, a sound, or a bight. A cove is a smaller circular or oval coastal inlet with a narrow entrance, some coves may be referred to as bays. "),
+("Ridge","A ridge or mountain ridge is a geological feature consisting of a chain of mountains or hills that form a continuous elevated crest for some distance. Ridges are usually termed hills or mountains as well, depending on size. "),
+("Forest",""),
+("Rain forest",""),
 ("Westland","");
 
 INSERT INTO Region (name,area) VALUES

@@ -1,0 +1,28 @@
+<span>This is the region view.</span>
+<span>{{text}}</span>
+<div>
+    <table>
+        <tr>
+            <td>Region name</td>
+            <td>
+                <input type="text" placeholder="Enter the name of the region" ng-model="regionName" />
+            </td>
+        </tr>
+        <tr>
+            <td>Area</td>
+            <td>
+                <input type="text" placeholder="Enter the area in sq. miles" ng-model="regionArea" />
+            </td>
+        </tr>
+        <tr>
+            <td>Region type</td>
+            <td>
+                <select ng-model="regionType">
+                    <option ng-repeat="option in regionTypeOptions" value="option.id">
+                        {{option.name}}
+                    </option>
+                </select>
+            </td>
+        </tr>
+    </table>
+</div>
