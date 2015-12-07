@@ -111,6 +111,7 @@ WHERE res.partOf=r.id AND r.id=? AND res.type IN (
 
 
 DONE
+UI
 VII: Retrieving general geography information
 Actor: general users(no authority access, can be students/travelers)
 Step by Step description:

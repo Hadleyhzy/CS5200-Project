@@ -47,5 +47,10 @@ function($routeProvider) {
             controller: 'resourceController'
         })
 
+        .when('/getDiversity', {
+            templateUrl: '/views/getDiversity.html',
+            controller: 'diversityController'
+        })
+
 		.otherwise({redirectTo: '/'});
 }]);
