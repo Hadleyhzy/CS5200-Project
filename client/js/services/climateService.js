@@ -34,9 +34,9 @@ angular.module('cs5200Project')
             "method":"GET",
             "url":"/climate",
             "params": {
-                "startDate":data,
-                "endDate":data,
-                "regionId":data
+                "startDate":data.startDate,
+                "endDate":data.endDate,
+                "regionId":data.regionId
             }
         });
     };

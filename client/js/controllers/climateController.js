@@ -44,4 +44,17 @@ angular.module('cs5200Project')
             $scope.addClimateFlag = true;
         }
     });
+
+    $scope.$watch('regionID', function (newValue, oldValue) {
+        climateService.getClimate({
+            "startDate":$scope.startDate,
+            "endDate":$scope.endDate,
+            "regionId":$scope.regionID
+        })
+        .then(function (result) {
+            $scope.climateInfo = result.data;
+        }, function (error) {
+            console.log(error);
+        });
+    });
 });

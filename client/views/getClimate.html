@@ -1,0 +1,36 @@
+<span>Fill out all fields to add climate info</span>
+<div ng-init="initRegion()">
+    <select ng-model="regionID">
+        <option ng-repeat="regionsOption in regions" ng-value="regionsOption.id">
+            {{regionsOption.name}}
+        </option>
+    </select>
+    Start Date: <input type="date" ng-model="startDate" />
+    End Date: <input type="date" ng-model="endDate" />
+    <table>
+        <tr>
+            <th>Climate Type</th>
+            <th>Date</th>
+            <th>Wind Speed</th>
+            <th>Humidity</th>
+            <th>Precipitation</th>
+            <th>Min Temp</th>
+            <th>Max Temp</th>
+            <th>Surface Temp</th>
+            <th>Air Temp</th>
+            <th>Average Temp</th>
+        </tr>
+        <tr ng-repeat="info in climateInfo">
+            <td>{{info.name}}</td>
+            <td>{{info.date}}</td>
+            <td>{{info.windSpeed}}</td>
+            <td>{{info.humidity}}</td>
+            <td>{{info.precipitation}}</td>
+            <td>{{info.min}}</td>
+            <td>{{info.max}}</td>
+            <td>{{info.surfaceTemp}}</td>
+            <td>{{info.airTemp}}</td>
+            <td>{{info.averageTemp}}</td>
+        </tr>
+    </table>
+</div>
