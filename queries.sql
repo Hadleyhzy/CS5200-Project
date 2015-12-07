@@ -28,6 +28,7 @@ WHERE
 
 
 DONE
+UI
 II: Updating regional weather information daily
 Actors: Weather Stations and Regional/Global Satellite
 Step by step description:

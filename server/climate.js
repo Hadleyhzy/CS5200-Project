@@ -94,5 +94,5 @@ function prepareTemperatureInsertData (parameters, climateId) {
 }
 
 function prepareClimateTypesQuery () {
-    return 'SELECT * FROM ClimateTypes';
+    return 'SELECT * FROM ClimateType';
 }

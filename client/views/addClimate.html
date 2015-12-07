@@ -1,0 +1,69 @@
+<span>Fill out all fields to add climate info</span>
+<div ng-init="initRegion()">
+    <select ng-model="regionId">
+        <option ng-repeat="regionsOption in regions" ng-value="regionsOption.id">
+            {{regionsOption.name}}
+        </option>
+    </select>
+    <table ng-show="addClimateFlag">
+        <tr>
+            <td>Wind Speed</td>
+            <td>
+                <input type="text" placeholder="Enter the wind speed" ng-model="windSpeed" />
+            </td>
+        </tr>
+        <tr>
+            <td>Humidity</td>
+            <td>
+                <input type="text" placeholder="Enter the humidity" ng-model="humidity" />
+            </td>
+        </tr>
+        <tr>
+            <td>Precipitation</td>
+            <td>
+                <input type="text" placeholder="Enter the precipitation" ng-model="precipitation" />
+            </td>
+        </tr>
+        <tr>
+            <td>Climate type</td>
+            <td>
+                <select ng-model="climateType">
+                    <option ng-repeat="climateOption in climateTypeOptions" ng-value="climateOption.id">
+                        {{climateOption.name}}
+                    </option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Minimum Temperature</td>
+            <td>
+                <input type="text" placeholder="Enter the Minimum Temperature" ng-model="min" />
+            </td>
+        </tr>
+        <tr>
+            <td>Maximum Temperature</td>
+            <td>
+                <input type="text" placeholder="Enter the Maximum Temperature" ng-model="max" />
+            </td>
+        </tr>
+        <tr>
+            <td>Surface Temperature</td>
+            <td>
+                <input type="text" placeholder="Enter the Surface Temperature" ng-model="surfaceTemp" />
+            </td>
+        </tr>
+        <tr>
+            <td>Air Temperature</td>
+            <td>
+                <input type="text" placeholder="Enter the Air Temperature" ng-model="airTemp" />
+            </td>
+        </tr>
+        <tr>
+            <td>Average Temperature</td>
+            <td>
+                <input type="text" placeholder="Enter the Average Temperature" ng-model="averageTemp" />
+            </td>
+        </tr>
+    </table>
+    <button ng-show="addClimateFlag" ng-click="addClimate()">Add climate</button>
+</div>

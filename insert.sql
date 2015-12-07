@@ -70,8 +70,8 @@ INSERT INTO Resource(capacity) VALUES
 (742443 square kilometers),
 
 INSERT INTO ClimateType(name,description) VALUES
-("Tropical rainforest climate","All 12 moths have averae precipitation of at least 60mm. These climates usually occur within 5-10 meridian latitude of the equator.This climate is dominated by the doldrums low-pressure system all year round, so has no natural seasons.")
-("Tropical monsoon climate","This type of climate, most common in South America, results from the monsoon winds which change direction according to the seasons. This climate has a driest month (which nearly always occurs at or soon after the "winter" solstice for that side of the equator) with rainfall less than 60 mm, but more than 1/25 the total annual precipitation."),
+("Tropical rainforest climate","All 12 moths have averae precipitation of at least 60mm. These climates usually occur within 5-10 meridian latitude of the equator.This climate is dominated by the doldrums low-pressure system all year round, so has no natural seasons."),
+("Tropical monsoon climate",'This type of climate, most common in South America, results from the monsoon winds which change direction according to the seasons. This climate has a driest month (which nearly always occurs at or soon after the "winter" solstice for that side of the equator) with rainfall less than 60 mm, but more than 1/25 the total annual precipitation.'),
 ("Tropical wet and dry or savanna climate","These climates have a pronounced dry season, with the driest month having precipitation less than 60 mm and less than 1/25 of the total annual precipitation."),
 ("Dry(arid and semiarid) climates","These climates are characterized by actual precipitation less than a threshold value set equal to the potential evapotranspiration."),
 ("Dry-summer or Mediterranean climates","These climates usually occur on the western sides of continents between the latitudes of 30° and 50°.[7] These climates are in the polar front region in winter, and thus have moderate temperatures and changeable, rainy weather."),
@@ -85,7 +85,7 @@ INSERT INTO ClimateType(name,description) VALUES
 ("Continental subarctic or boreal(taiga) climates","occur poleward of the other group D climates, mostly in the 50° and low 60° north latitude, although it might occur as far north as 70°N."),
 ("Continental subarctic climates with extremely severe winters","Places with this climate have the temperature in their coldest month lower than −38 °C. These climates occur only in eastern Siberia. The names of some of the places with this climate have become veritable synonyms for extreme, severe winter cold."),
 ("Tundra climate","Warmest month has an average temperature between 0 and 10 °C. These climates occur on the northern edges of the North American and Eurasian land masses, and on nearby islands. ET climates are also found on some islands near the Antarctic Convergence, and at high elevations outside the polar regions, above the tree line."),
-("Ice cap climate","All twelve months have average temperatures below 0 °C (32 °F). This climate is dominant in Antarctica and inner Greenland, but also occurs at extremely high altitudes on mountains, above even tundra."),
+("Ice cap climate","All twelve months have average temperatures below 0 °C (32 °F). This climate is dominant in Antarctica and inner Greenland, but also occurs at extremely high altitudes on mountains, above even tundra.");
 
 
 

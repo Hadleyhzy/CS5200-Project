@@ -1,36 +1,28 @@
 angular.module('cs5200Project')
 .controller('climateController', function ($scope, $location, climateService, regionService) {
-    regionService.getRegionTypes().then(function (result) {
-        $scope.regionTypeOptions = result.data;
-    });
-    regionService.getPlates().then(function (result) {
-        $scope.plates = result.data;
+    climateService.getClimateTypes().then(function (result) {
+        $scope.climateTypeOptions = result.data;
     });
 
-    $scope.addRegion = function () {
-        regionService.addRegion(
-            $scope.regionName,
-            $scope.regionArea,
-            $scope.regionType,
-            $scope.plate
-            )
+    $scope.addClimate = function () {
+        climateService.addClimate({
+                "windSpeed":$scope.windSpeed,
+                "humidity":$scope.humidity,
+                "precipitation":$scope.precipitation,
+                "isFor":$scope.regionId,
+                "climateType":$scope.climateType,
+                "min":$scope.min,
+                "max":$scope.max,
+                "surfaceTemp":$scope.surfaceTemp,
+                "airTemp":$scope.airTemp,
+                "averageTemp":$scope.averageTemp
+            })
         .then(function (result) {
-            $scope.regionName = $scope.regionArea = $scope.regionType = $scope.plate = '';
-            $location.path("/success");
-        }, function (error) {
-            console.log(error);
-        });
-    };
-
-    $scope.updateRegion = function () {
-        regionService.updateRegion(
-            $scope.regionName,
-            $scope.regionArea,
-            $scope.regionId
-            )
-        .then(function (result) {
-            $scope.regionName = $scope.regionArea = '';
-            $scope.regionUpdate = false;
+            $scope.windSpeed = $scope.humidity = $scope.precipitation = $scope.min = '';
+            $scope.climateType = $scope.max = $scope.surfaceTemp = $scope.airTemp = '';
+            $scope.regionId = $scope.averageTemp = '';
+            $scope.regions = null;
+            $scope.addClimateFlag = false;
             $location.path("/success");
         }, function (error) {
             console.log(error);
@@ -49,11 +41,7 @@ angular.module('cs5200Project')
 
     $scope.$watch('regionId', function (newValue, oldValue) {
         if ($scope.regions) {
-            $scope.regionName = $scope.regions[parseInt(newValue)].name;
-            $scope.regionArea = $scope.regions[parseInt(newValue)].area;
-            $scope.regionType = $scope.regions[parseInt(newValue)].type;
-            $scope.plate = $scope.regions[parseInt(newValue)].belongsTo;
-            $scope.regionUpdate = true;
+            $scope.addClimateFlag = true;
         }
     });
 });

@@ -2,7 +2,7 @@
 <html lang="en" ng-app="cs5200Project">
 <head>
 	<meta charset="utf-8">
-	<title>AngularJS Skeleton</title>
+	<title>CS5200 Project</title>
 	<link rel="stylesheet" href="styles/main.css">
 	<script src="/scripts/angular/angular.js"></script>
 	<script src="/scripts/angular-route/angular-route.js"></script>
@@ -10,6 +10,7 @@
 	<script src="js/main.js"></script>
 	<script src="js/controllers/mainController.js"></script>
 	<script src="js/controllers/regionController.js"></script>
+	<script src="js/controllers/climateController.js"></script>
 
 	<script src="js/services/regionService.js"></script>
 	<script src="js/services/climateService.js"></script>
@@ -24,6 +25,10 @@
 		</tr>
 		<tr>
 			<td><a href="#/getLandscape">Get landscape</a></td>
+		</tr>
+		<tr>
+			<td><a href="#/addClimate">Add climate info</a></td>
+			<td><a href="#/getClimate">Get climate info</a></td>
 		</tr>
 	</table>
 	<div ng-view>

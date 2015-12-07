@@ -15,40 +15,28 @@ angular.module('cs5200Project')
                 "Content-Type":"application/json"
             },
             "data": {
-                "windSpeed":regionName,
-                "humidity":regionArea,
-                "precipitation":regionType,
-                "isFor":plate,
-                "climateType":,
-                "min":parameters.min || '',
-                "max":parameters.max || '',
-                "surfaceTemp":parameters.surfaceTemp || '',
-                "airTemp":parameters.airTemp || '',
-                "averageTemp":parameters.averageTemp
+                "windSpeed":data.windSpeed,
+                "humidity":data.humidity,
+                "precipitation":data.precipitation,
+                "isFor":data.isFor,
+                "climateType":data.climateType,
+                "min":data.min,
+                "max":data.max,
+                "surfaceTemp":data.surfaceTemp,
+                "airTemp":data.airTemp,
+                "averageTemp":data.averageTemp
             }
         });
     };
 
-    this.updateRegion = function (regionName, regionArea, regionId) {
-        return $http({
-            "method":"PUT",
-            "url":"/region",
-            "params": {
-                "name":regionName,
-                "area":regionArea,
-                "regionId":regionId
-            }
-        });
-    };
-
-    this.getClimate = function () {
+    this.getClimate = function (data) {
         return $http({
             "method":"GET",
             "url":"/climate",
             "params": {
-                "startDate":,
-                "endDate":,
-                "regionId":
+                "startDate":data,
+                "endDate":data,
+                "regionId":data
             }
         });
     };
