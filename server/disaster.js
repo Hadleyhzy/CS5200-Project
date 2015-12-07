@@ -67,7 +67,7 @@ function prepareDisasterInsertObject (parameters) {
     var startDate, endDate,
     casualty = parameters.casualty || '',
     propertyLost = parameters.propertyLost || '',
-    type = parameters.type || '';
+    type = parameters.disasterType || '';
     startDate = (parameters.start ? new Date(parameters.start) : '');
     endDate = (parameters.start ? new Date(parameters.end) : '');
     return {

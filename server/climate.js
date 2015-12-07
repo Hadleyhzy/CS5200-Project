@@ -74,7 +74,7 @@ function prepareClimateInsertData (parameters) {
         "humidity":parameters.humidity || '',
         "precipitation":parameters.precipitation || '',
         "isFor":parameters.isFor || '',
-        "type":parameters.type || ''
+        "type":parameters.climateType || ''
     };
 }
 

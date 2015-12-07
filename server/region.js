@@ -1,6 +1,6 @@
 exports.regionList = function (connection) {
     return function (request, response) {
-        var queryString = 'SELECT * FROM Region r, RegionType rt WHERE rt.id=r.type';
+        var queryString = 'SELECT * FROM Region r';
         connection.query(queryString, function (error, rows, fields) {
             if (error) {
                 console.log(error);
@@ -61,7 +61,7 @@ function prepareRegionTypesQuery () {
 function prepareRegionInsert (parameters, connection) {
     var name = parameters.name || '',
         area = parameters.area || '',
-        type = parameters.type || '',
+        type = parameters.regionType || '',
         belongsTo = parameters.belongsTo || '',
         queryString;
     queryString = 'INSERT INTO Region (name, area, type, belongsTo) VALUES ('

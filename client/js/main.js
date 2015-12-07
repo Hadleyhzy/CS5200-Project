@@ -8,6 +8,10 @@ function($routeProvider) {
 			controller: 'mainController'
 		})
 
+        .when('/success', {
+            templateUrl: 'views/success.html'
+        })
+
         .when('/addRegion', {
             templateUrl: 'views/addRegion.html',
             controller: 'regionController'

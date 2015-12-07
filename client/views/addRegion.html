@@ -1,5 +1,4 @@
-<span>This is the region view.</span>
-<span>{{text}}</span>
+<span>Fill out all fields to add region</span>
 <div>
     <table>
         <tr>
@@ -18,11 +17,22 @@
             <td>Region type</td>
             <td>
                 <select ng-model="regionType">
-                    <option ng-repeat="option in regionTypeOptions" value="option.id">
-                        {{option.name}}
+                    <option ng-repeat="regionOption in regionTypeOptions" ng-value="regionOption.id">
+                        {{regionOption.name}}
+                    </option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Plate</td>
+            <td>
+                <select ng-model="plate">
+                    <option ng-repeat="plateOption in plates" ng-value="plateOption.id">
+                        {{plateOption.name}}
                     </option>
                 </select>
             </td>
         </tr>
     </table>
+    <button ng-click="addRegion()">Add region</button>
 </div>

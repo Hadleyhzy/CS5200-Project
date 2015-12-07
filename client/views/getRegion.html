@@ -1,0 +1,17 @@
+<span>List of Regions</span>
+<div ng-init="initRegion()">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Area</th>
+        </tr>
+        <tr ng-repeat="regionData in regions">
+            <td>
+                {{regionData.name}}
+            </td>
+            <td>
+                {{regionData.area}}
+            </td>
+        </tr>
+    </table>
+</div>
