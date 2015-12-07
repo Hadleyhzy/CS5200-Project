@@ -42,19 +42,16 @@ INSERT INTO Region (name,area) VALUES
 INSERT INTO Location(latitude,longtitude,timezone) VALUES
 ('119°15′00″E','37°46′48″N','ADT');
 
-INSERT INTO Landscape(name, vegetation) VALUES
-("Plain",),
-("Plateaus",),
-("canyons",),
-("valleys",),
-("hills","a hill is universally considered to be less tall and less steep than a mountain. "),
-("Mountains","A mountain is a large landform that stretches above the surrounding land in a limited area, usually in the form of a peak. A mountain is generally steeper than a hill. Mountains are formed through tectonic forces or volcanism."),
-("mid-ocean ridges",),
-("volcanoes",),
-("the great ocean basins",);
+INSERT INTO Landscape(vegetation, isFor) VALUES
+("a hill is universally considered to be less tall and less steep than a mountain. ",7),
+("A mountain is a large landform that stretches above the surrounding land in a limited area, usually in the form of a peak. A mountain is generally steeper than a hill. Mountains are formed through tectonic forces or volcanism.",8),
+('Extreme',8),
+("volcanoes",7),
+("the great ocean basins",7);
 
-INSERT INTO SurfaceElevation(min,max,ave) VALUES
-(0,4500,684)
+INSERT INTO SurfaceElevation(min,max,average,landscape) VALUES
+(0,4500,684,1),
+(100,200,150,2);
 
 INSERT INTO Diversity(species) VALUES
 

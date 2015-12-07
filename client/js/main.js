@@ -27,5 +27,10 @@ function($routeProvider) {
             controller: 'regionController'
         })
 
+        .when('/addClimate', {
+            templateUrl: '/views/addClimate.html',
+            controller: 'climateController'
+        })
+
 		.otherwise({redirectTo: '/'});
 }]);

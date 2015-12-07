@@ -1,5 +1,5 @@
 angular.module('cs5200Project')
-.controller('regionController', function ($scope, $location, regionService) {
+.controller('climateController', function ($scope, $location, climateService, regionService) {
     regionService.getRegionTypes().then(function (result) {
         $scope.regionTypeOptions = result.data;
     });
