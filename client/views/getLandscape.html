@@ -1,8 +1,8 @@
 <span>Enter region to get landscape info</span>
 <div ng-init="initRegion()">
     <select ng-model="landscape.regionId">
-        <option ng-repeat="landscape.regionsOption in regions" ng-value="landscape.regionsOption.id">
-            {{landscape.regionsOption.name}}
+        <option ng-repeat="regionsOption in regions" ng-value="regionsOption.id">
+            {{regionsOption.name}}
         </option>
     </select>
     <table>

@@ -1,5 +1,5 @@
 angular.module('cs5200Project')
-.controller('landscapeController', function ($scope, $location, landscapeService, regionService) {
+.controller('resourceController', function ($scope, $location, resourceService, regionService) {
     $scope.initRegion = function () {
         regionService.getRegions().then(function (result) {
             var lookup = {}, array = result.data;
@@ -10,13 +10,13 @@ angular.module('cs5200Project')
         });
     };
 
-    $scope.$watch('landscape.regionId', function (newValue, oldValue) {
-        if ($scope.landscape && $scope.landscape.regionId) {
-            landscapeService.getLandscape({
-                "regionId":$scope.landscape.regionId
+    $scope.$watch('resource.regionId', function (newValue, oldValue) {
+        if ($scope.resource && $scope.resource.regionId) {
+            resourceService.getResource({
+                "regionId":$scope.resource.regionId
             })
             .then(function (result) {
-                $scope.landscapeInfo = result.data;
+                $scope.resourceInfo = result.data;
             }, function (error) {
                 console.log(error);
             });

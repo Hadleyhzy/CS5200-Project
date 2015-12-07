@@ -42,5 +42,10 @@ function($routeProvider) {
             controller: 'landscapeController'
         })
 
+        .when('/getResource', {
+            templateUrl: '/views/getResource.html',
+            controller: 'resourceController'
+        })
+
 		.otherwise({redirectTo: '/'});
 }]);

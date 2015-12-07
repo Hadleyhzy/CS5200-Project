@@ -1,0 +1,18 @@
+<span>Enter region to get resource info</span>
+<div ng-init="initRegion()">
+    <select ng-model="resource.regionId">
+        <option ng-repeat="regionsOption in regions" ng-value="regionsOption.id">
+            {{regionsOption.name}}
+        </option>
+    </select>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Capacity</th>
+        </tr>
+        <tr ng-repeat="info in resourceInfo">
+            <td>{{info.name}}</td>
+            <td>{{info.capacity}}</td>
+        </tr>
+    </table>
+</div>

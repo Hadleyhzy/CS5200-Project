@@ -89,6 +89,7 @@ SELECT * FROM Climate WHERE start=? AND end=?
 
 
 DONE
+UI
 VI: Retrieving the information of the land and resources
 Actors: Department of Land and Resources
 Step by step description:
