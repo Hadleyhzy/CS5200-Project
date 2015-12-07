@@ -1,4 +1,4 @@
-angular.module('skeletonApp')
+angular.module('cs5200Project')
 .controller('mainController', [
 '$scope',
 '$http',

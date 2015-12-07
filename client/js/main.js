@@ -1,4 +1,4 @@
-angular.module('skeletonApp', ['ngRoute'])
+angular.module('cs5200Project', ['ngRoute'])
 .config([
 '$routeProvider',
 function($routeProvider) {
