@@ -37,5 +37,10 @@ function($routeProvider) {
             controller: 'climateController'
         })
 
+        .when('/getLandscape', {
+            templateUrl: '/views/getLandscape.html',
+            controller: 'landscapeController'
+        })
+
 		.otherwise({redirectTo: '/'});
 }]);

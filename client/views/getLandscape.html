@@ -1,0 +1,22 @@
+<span>Enter region to get landscape info</span>
+<div ng-init="initRegion()">
+    <select ng-model="landscape.regionId">
+        <option ng-repeat="landscape.regionsOption in regions" ng-value="landscape.regionsOption.id">
+            {{landscape.regionsOption.name}}
+        </option>
+    </select>
+    <table>
+        <tr>
+            <th>Vegetation</th>
+            <th>Min Elevation</th>
+            <th>Max Elevation</th>
+            <th>Average</th>
+        </tr>
+        <tr ng-repeat="info in landscapeInfo">
+            <td>{{info.vegetation}}</td>
+            <td>{{info.min}}</td>
+            <td>{{info.max}}</td>
+            <td>{{info.average}}</td>
+        </tr>
+    </table>
+</div>
