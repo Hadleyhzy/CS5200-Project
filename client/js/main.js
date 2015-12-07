@@ -52,5 +52,15 @@ function($routeProvider) {
             controller: 'diversityController'
         })
 
+        .when('/addDisaster', {
+            templateUrl: '/views/addDisaster.html',
+            controller: 'disasterController'
+        })
+
+        .when('/getDisaster', {
+            templateUrl: '/views/getDisaster.html',
+            controller: 'disasterController'
+        })
+
 		.otherwise({redirectTo: '/'});
 }]);

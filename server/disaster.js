@@ -9,8 +9,8 @@ exports.disasterInformation = function (connection) {
                 response.status(200).send(rows);
             }
         });
-    }
-}
+    };
+};
 
 exports.disasterEvent = function (connection) {
     return function (request, response) {
@@ -21,11 +21,20 @@ exports.disasterEvent = function (connection) {
                 console.log(error);
                 response.status(500).send("Server error");
             } else {
-                response.status(200).send(rows);
+                queryString = prepareDisasterRegionInsert();
+                insertObject = prepareDisasterRegionInsertObject(request.body, rows.insertId);
+                connection.query(queryString, insertObject, function (error, rows, fields) {
+                    if (error) {
+                        console.log(error);
+                        response.status(500).send("Server error");
+                    } else {
+                        response.status(200).send(rows);
+                    }
+                });
             }
         });
-    }
-}
+    };
+};
 
 exports.disasterTypes = function (connection) {
     return function (request, response) {
@@ -38,6 +47,25 @@ exports.disasterTypes = function (connection) {
                 response.status(200).send(rows);
             }
         });
+    };
+};
+
+function prepareDisasterRegionInsert () {
+    return 'INSERT INTO Experienced SET ?';
+}
+
+function prepareDisasterRegionInsertObject (parameters, disasterId) {
+    // var data = [];
+    // for (var i = 0; i < parameters.regions.length; i++) {
+    //     data[i] = {
+    //         "experienced":disasterId || '',
+    //         "occuredAt":parameters.regions[i].id
+    //     };
+    // }
+    // return data;
+    return {
+        "experienced":disasterId || '',
+        "occuredAt":parameters.regions
     }
 }
 
@@ -53,7 +81,11 @@ function prepareDisasterFetchQuery (queryParameters, connection) {
         queryString += ' AND d.casualty >= ' + connection.escape(queryParameters.casualty);
     }
     if (queryParameters.location) {
-        queryString += ' AND d.id IN (SELECT e.experienced FROM Experienced e, Region r WHERE e.occuredAt = r.id AND r.name = ' + connection.escape(queryParameters.location);
+        queryString += ' AND d.id IN (SELECT e.experienced FROM Experienced e, Region r WHERE e.occuredAt = r.id AND r.id=' + connection.escape(queryParameters.location) + ')';
+        // for (var i = i; i < queryParameters.location.length; i++) {
+        //     queryString += ' OR r.id=' + connection.escape(queryParameters.location[i]);
+        // }
+        // queryString += '))';
     }
 
     return queryString;

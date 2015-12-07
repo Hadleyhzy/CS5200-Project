@@ -1,0 +1,50 @@
+<span>Fill out all fields to add disaster</span>
+<div ng-init="initRegion()">
+    <table>
+        <tr>
+            <td>Region</td>
+            <td>
+                <select ng-model="disaster.regionId">
+                    <option ng-repeat="regionsOption in regions" ng-value="regionsOption.id">
+                        {{regionsOption.name}}
+                    </option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Start Date</td>
+            <td>
+                <input type="date" ng-model="startDate" />
+            </td>
+        </tr>
+        <tr>
+            <td>End Date</td>
+            <td>
+                <input type="date" ng-model="endDate" />
+            </td>
+        </tr>
+        <tr>
+            <td>Casualty</td>
+            <td>
+                <input type="text" ng-model="casualty" />
+            </td>
+        </tr>
+        <tr>
+            <td>Property Lost</td>
+            <td>
+                <input type="text" ng-model="propertyLost" />
+            </td>
+        </tr>
+        <tr>
+            <td>Disaster type</td>
+            <td>
+                <select ng-model="disasterType">
+                    <option ng-repeat="disasterOption in disasterTypeOptions" ng-value="disasterOption.id">
+                        {{disasterOption.name}}
+                    </option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <button ng-click="addDisaster()">Add disaster</button>
+</div>
