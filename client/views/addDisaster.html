@@ -4,7 +4,7 @@
         <tr>
             <td>Region</td>
             <td>
-                <select ng-model="disaster.regionId">
+                <select multiple ng-model="disaster.regionId">
                     <option ng-repeat="regionsOption in regions" ng-value="regionsOption.id">
                         {{regionsOption.name}}
                     </option>

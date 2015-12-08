@@ -7,15 +7,15 @@ angular.module('cs5200Project')
         });
     };
 
-    this.getDisaster = function (data) {
+    this.getDisaster = function (data, regions) {
         return $http({
             "method":"GET",
             "url":"/disaster",
             "params": {
-                "name":data.name,
-                "damage":data.propertyLost,
+                "type":data.type,
+                "damage":data.damage,
                 "casualty":data.casualty,
-                "location":data.locations
+                "location[]":regions
             }
         });
     };
@@ -33,7 +33,7 @@ angular.module('cs5200Project')
                 "casualty":data.casualty,
                 "propertyLost":data.propertyLost,
                 "disasterType":data.disasterType,
-                "regions":data.regions
+                "regions[]":data.regions
             }
         });
     };

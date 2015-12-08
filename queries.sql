@@ -47,6 +47,7 @@ VALUES ()
 
 
 DONE
+UI
 III: Updating the record of the natural disasters
 Actors: Natural Disaster Management Department
 Step by Step description:
@@ -65,6 +66,7 @@ VALUES ()
 
 
 DONE
+UI
 IV: Retrieving information about natural disasters
 Actors: Natural Disaster Management Department
 Step by step:
@@ -119,11 +121,3 @@ Step by Step description:
 2.[System] The system returns the information of this selection if the insert was successful.
 3.[System] If there's a failure, the system notifies the administrator and sends an error
 message to general users.
-SELECT *
-FROM Region r, Landscape l, Diversity d, SurfaceElevation se, Location loc, Resources r
-WHERE r.id=?
-    AND l.isFor=r.id
-    AND se.landscape=l.id
-    AND d.belongsTo=r.id
-    AND loc.partOf=r.id
-    AND r.partOf=r.id

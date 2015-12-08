@@ -5,38 +5,35 @@ angular.module('cs5200Project')
     });
 
     $scope.addDisaster = function () {
-        // var regionsData = [];
-        // for (var i = 0; i < $scope.disaster.regionId.length; i++) {
-        //     regionsData[i] = {
-        //         "id":$scope.disaster.regionId[i]
-        //     }
-        // }
+        var regionsData = [];
+        for (var i = 0; i < $scope.disaster.regionId.length; i++) {
+            regionsData[i] = {
+                "id":$scope.disaster.regionId[i]
+            };
+        }
         disasterService.addDisaster({
             "start":$scope.startDate,
             "end":$scope.endDate,
             "casualty":$scope.casualty,
             "propertyLost":$scope.propertyLost,
             "disasterType":$scope.disasterType,
-            "regions":$scope.disaster.regionId
+            "regions":regionsData
         })
         .then(function (result) {
-            $scope.regionName = $scope.regionArea = $scope.regionType = $scope.plate = '';
             $location.path("/success");
         }, function (error) {
             console.log(error);
         });
     };
 
-    $scope.updateRegion = function () {
-        regionService.updateRegion(
-            $scope.regionName,
-            $scope.regionArea,
-            $scope.regionId
-            )
+    $scope.getDisaster = function () {
+        disasterService.getDisaster({
+            "type":$scope.disasterType,
+            "damage":$scope.propertyLost,
+            "casualty":$scope.casualty
+        }, $scope.disaster.regionId)
         .then(function (result) {
-            $scope.regionName = $scope.regionArea = '';
-            $scope.regionUpdate = false;
-            $location.path("/success");
+            $scope.disasterInfo = result.data;
         }, function (error) {
             console.log(error);
         });
